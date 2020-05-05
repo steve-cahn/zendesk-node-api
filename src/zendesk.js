@@ -5,6 +5,8 @@ function Zendesk(config){
     config.authorization = 'Bearer ' + config.token;
   }
   return {
+    requests: require('./accessor.js')(config, 'request', 'requests'),
+    
     tickets: require('./accessor.js')(config, 'ticket', 'tickets'),
     ticketFields: require('./accessor.js')(config, 'ticket_field', 'ticket_fields'),
 
